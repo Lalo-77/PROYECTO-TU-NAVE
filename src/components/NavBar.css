@@ -1,0 +1,7 @@
+#contenedor{
+    width: 1700px;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
