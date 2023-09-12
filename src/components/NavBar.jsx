@@ -1,28 +1,23 @@
-
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
-
+import"../styles/NavBar.css"
+import CartWidget from './CartWidget.jsx'
+import { Link } from "react-router-dom"
 const NavBar = () => {
     return ( 
-        <div className='contenedor'>
-            <div className=''>
-                <a className='nav_link' href='#'>Tu Nave</a>
-            </div>
-            <ul>
-                <li>
-                    <a className='nav_nosotros'href='#'>Nosotros</a>
+        <header className='Contenedor'>
+            <Link to="/" className='TuMaquina'>
+                <img width={100} className='logo' src='/src/assets/img/logo.jpg' alt='logo'/>
+            </Link>
+            <nav className='Menu'>
+                <Link to="/Inicio">Inicio</Link>
+                <Link to="/category/Accesorios">Accesorios</Link>
+                <Link to="/category/Limpieza">Limpieza</Link>
+                <Link to="/category/Decoracion">Decoracion</Link>
+                <Link to="/category/Proteccion">Proteccion</Link>
+                <li className='carrito'>
+                    <CartWidget/>
                 </li>
-                <li>
-                    <a className='nav_productos'href='#'>Productos</a>
-                </li>
-                <li>
-                    <a className='nav_contactos'href='#'>Contactos</a>
-                </li>
-                <li>
-                    <a className='nav_Cartwidget'href='#'>CartWidget</a>
-                </li>
-            </ul>
-        </div>
+            </nav>
+        </header>
     ); 
 }
 export default NavBar; 

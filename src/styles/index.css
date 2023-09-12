@@ -1,0 +1,38 @@
+.contened{
+    display:grid;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/img/pantalla.jpg);
+    background-size: cover;
+}
+.tarjeta{
+    display: grid;
+
+}
+.item{
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+}
+.imag{
+    width: 400px;
+    height: 200px;
+}
+.nombre{
+    color:darkblue;
+    font-size: 30px;
+    font-weight:20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.categoria{
+    color:chartreuse;
+    font-size: 20px;
+    font-weight:10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.precio{
+    color: chartreuse;
+    font-size: 20px;
+    font-weight:10px;
+}

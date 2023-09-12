@@ -1,15 +1,11 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react"
+import carrito from "../assets/img/carrito.png"
 
 const CartWidget = () => {
-
     return (
-        <>
-         <img className="#" href ="./img/carrito .png"></img>
-        <spam>0</spam>
-        </>
-       
-        
+        <div className="cart">
+        <img className="imagen" src={carrito} />
+        <span className="cantidad">0</span>
+        </div>
     )
 }
 export default CartWidget

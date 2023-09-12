@@ -1,21 +1,42 @@
+import {useEffect,useState} from "react"
+import productosJSON from "../data/productos.json"
+import ItemList  from "./ItemList/ItemList"
+import { useParams } from "react-router-dom"
 
+const ItemListContainer =({greetings})=>{
+    
+    const [productos, setProductos] =useState([])
+    const {categoryName } = useParams()
 
-const Greeting = ({props}) => {
-    return <h1>{props}</h1>;
+    const Productos=(categoryName) =>{
+        return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
 
-};
-
-const Title = () => {
-    const texto ="Tu Nave"
-    return (
-        <>
-        
-            <div className="header">
-                <Greeting text={texto}/>
-            </div>
-        
-        </>
-
+            if(categoryName=== undefined) {
+                const productosFiltrados = productosJSON.filter(
+                    (item) =>item.category === categoryName);
+                resolve(productosFiltrados)
+            } else {
+                resolve(productosJSON);
+            }
+            productos.length>0 ? 
+            resolve(productos.JSON)
+            : reject('No hay productos')
+        },2000)
+        }
     )
 }
-    export default Title 
+
+useEffect(()=>{
+    Productos(categoryName).then((data) => setProductos(data));
+}, [categoryName]);
+
+return (
+    <div>
+        <h1 className="titulo">{greetings}</h1>;
+        <ItemList productos={productos}/>
+    </div>
+
+)
+}
+    export default ItemListContainer 
