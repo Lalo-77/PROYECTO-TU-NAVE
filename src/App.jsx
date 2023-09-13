@@ -1,7 +1,7 @@
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer';
 import {BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemCount from './components/ItemCount';
+import Itemcount from "./components/ItemCount"
 
 function App() {
   return (
@@ -12,7 +12,9 @@ function App() {
     <Route exact path='/' element={<ItemListContainer greetings="Bienvenidos a Tienda Tu Maquina"/>}/>
     <Route exact path='/category/:categoryName' element={<ItemListContainer/>}/>
     <Route exact path='/productos/:productosId' element={<ItemListContainer/>}/>
-    <ItemCount/>
+    <Route exact path='/productos/:productosId' element={<ItemListContainer/>}/>
+    <Route exact path='/productos/:productos' element={<Itemcount/>}/>
+
     </Routes>
     </BrowserRouter>
 

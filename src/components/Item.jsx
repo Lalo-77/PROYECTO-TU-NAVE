@@ -5,14 +5,14 @@ const Item =(productos)=> {
 <>
 {
     productos? (
-        <div href="#" className='item'> 
-        <NavLink key={'productos'.id} to={`/Item/${productos.id}`} >
-            <img className="imag" src="{productos.image} alt={name} width{70}"/>
+        <a href="#" className='item'> 
+        <NavLink key={'productos'.id} to={`/Item/${productos.id}`}>
+            <img className="imag" src={productos.image} alt={name} width={125}/>
             <h1 className="nombre">{productos.title}</h1>
-            <p className="categoria">{productos.category}</p>
-            <spam className="precio" >${productos.precio}</spam>
+            <spam className="precio" >${productos.price}</spam>
+            <p className="stock">{productos.stock}</p>
         </NavLink>
-            </div>
+            </a>
     ): null
 }
     </>

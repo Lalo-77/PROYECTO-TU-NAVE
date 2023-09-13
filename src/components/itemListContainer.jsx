@@ -11,7 +11,6 @@ const ItemListContainer =({greetings})=>{
     const Productos=(categoryName) =>{
         return new Promise((resolve,reject)=>{
         setTimeout(()=>{
-
             if(categoryName=== undefined) {
                 const productosFiltrados = productosJSON.filter(
                     (item) =>item.category === categoryName);
@@ -26,13 +25,12 @@ const ItemListContainer =({greetings})=>{
         }
     )
 }
-
 useEffect(()=>{
     Productos(categoryName).then((data) => setProductos(data));
 }, [categoryName]);
 
 return (
-    <div>
+    <div className="item-list-container">
         <h1 className="titulo">{greetings}</h1>;
         <ItemList productos={productos}/>
     </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
 import { Item } from "./Item"
 import {ItemCount} from "./ItemCount"
+import productos from "../data/productos.json"
 
 export const ItemDetail = ({productos})=> {
     
@@ -10,10 +11,15 @@ export const ItemDetail = ({productos})=> {
             {
             productos?(
             <div>
-                <img className='card-img' src={productos.img} alt=''/>
+
+            {productos.map(producto => <section key={productos.id}>
+                <img className='card-img' src={productos.image} alt=''/>
                 <h3>{productos.title}</h3>
                 <p>productos.descripcion</p>
-                <p>$ {productos.precio}</p>
+                <p>$ {productos.price}</p>
+                <p>{productos.stock}</p>
+                </section>)}
+                
             </div>
             ) :null
             }
@@ -24,3 +30,4 @@ export const ItemDetail = ({productos})=> {
         </div>
         )
     }
+export default ItemDetail
