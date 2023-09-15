@@ -6,7 +6,7 @@ export default function ItemdatailContainer () {
     const [productos, setProductos] = useState ();
 
     useEffect(() => {
-        fetch(./data/productos/id/1)
+        fetch()
         .then((res) => res.json())
         .then((data) => setProductos(data));
     }, []);

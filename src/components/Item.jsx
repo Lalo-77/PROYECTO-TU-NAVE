@@ -9,7 +9,7 @@ const Item =(productos)=> {
         <NavLink key={'productos'.id} to={`/Item/${productos.id}`}>
             <img className="imag" src={productos.image} alt={name} width={125}/>
             <h1 className="nombre">{productos.title}</h1>
-            <spam className="precio" >${productos.price}</spam>
+            <span className="precio" >${productos.price}</span>
             <p className="stock">{productos.stock}</p>
         </NavLink>
             </a>
