@@ -10,10 +10,10 @@ const NavBar = () => {
             </Link>
             <ul className="navBar">
             <Link to="/Inicio">Inicio</Link>
-                <Link to="/category/Accesorios">Accesorios</Link>
-                <Link to="/category/Limpieza">Limpieza</Link>
-                <Link to="/category/Decoracion">Decoracion</Link>
-                <Link to="/category/Proteccion">Proteccion</Link>
+                <Link to="/category/accesorios">Accesorios</Link>
+                <Link to="/category/limpieza">Limpieza</Link>
+                <Link to="/category/decoracion">Decoracion</Link>
+                <Link to="/category/proteccion">Proteccion</Link>
                 <li className='carrito'>
                     <CartWidget/>
                 </li>

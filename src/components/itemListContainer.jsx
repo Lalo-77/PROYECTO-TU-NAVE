@@ -8,33 +8,27 @@ const ItemListContainer =({greetings})=>{
     const [productos, setProductos] =useState([])
     const {categoryName } = useParams()
 
-    const Productos=(categoryName) =>{
-        return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            if(categoryName=== undefined) {
-                const productosFiltrados = productosJSON.filter(
-                    (item) =>item.category === categoryName);
-                resolve(productosFiltrados)
-            } else {
-                resolve(productosJSON);
-            }
-            productos.length>0 ? 
-            resolve(productos.JSON)
-            : reject('No hay productos')
-        },2000)
+    const getProductos = (categoryName) => {
+        return new Promise((resolve, reject) => {
+        setTimeout(() => {
+        // si no hay categoría, trae a todos los productos
+        if(!categoryName){
+        resolve(productosJSON);
+        }else{
+        // si hay, trae solo a esos productos
+        resolve(productosJSON.filter(el => el.category === categoryName))
         }
-    )
-}
-useEffect(()=>{
-    Productos(categoryName).then((data) => setProductos(data));
-}, [categoryName]);
+        }, 2000);
+        });
+        };
+        
+        useEffect(() => {
+        console.log('useEffect llamado con categoryName:', categoryName);
+        
+        getProductos(categoryName)
+        .then((data) => setProductos(data))
+        .catch((error) => console.error(error));
+        }, [categoryName]);
 
-return (
-    <div className="item-list-container">
-        <h1 className="titulo">{greetings}</h1>;
-        <ItemList productos={productos}/>
-    </div>
-
-)
 }
     export default ItemListContainer 
