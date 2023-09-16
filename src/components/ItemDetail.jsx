@@ -4,7 +4,7 @@ import { Item } from "./Item"
 import {ItemCount} from "./ItemCount"
 import productos from "../data/productos.json"
 
-export const ItemDetail = ({productos})=> {
+const ItemDetail = ({productos})=> {
     
     return(
         <div className='detail'>
@@ -12,11 +12,11 @@ export const ItemDetail = ({productos})=> {
             productos?(
             <div>
 
-            {productos.map(producto => <section key={productos.id}>
+            {productos.map(productos => <section key={productos.id}>
                 <img className='card-img' src={productos.image} alt=''/>
                 <h3>{productos.title}</h3>
                 <p>productos.descripcion</p>
-                <p>$ {productos.price}</p>
+                <p>${productos.price}</p>
                 <p>{productos.stock}</p>
                 </section>)}
                 

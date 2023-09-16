@@ -4,9 +4,9 @@ const ItemList =({productos}) =>{
 
     return( 
         <div className="tarjeta">
-        {productos.map((productos) => (
-        <Item key={productos.id} productos={productos}/>
-        ))}
+            {productos.map((productos) => (
+            <Item key={productos.id} productos={productos}/>
+            ))}
             
         </div>
     )

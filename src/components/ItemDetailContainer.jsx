@@ -1,7 +1,7 @@
 import {useEffect,useState} from "react"
 import ItemDetail from "./ItemDetail";
 
-export default function ItemdatailContainer () {
+export default function ItemDetailContainer () {
 
     const [productos, setProductos] = useState ();
 

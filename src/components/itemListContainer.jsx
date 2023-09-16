@@ -23,12 +23,17 @@ const ItemListContainer =({greetings})=>{
         };
         
         useEffect(() => {
-        console.log('useEffect llamado con categoryName:', categoryName);
         
         getProductos(categoryName)
         .then((data) => setProductos(data))
         .catch((error) => console.error(error));
         }, [categoryName]);
-
+        
+        return (
+            <div className="item-list-container">
+                <h1 className="titulo">{greetings}</h1>
+                <ItemList productos={productos}/>
+            </div>
+        )
 }
     export default ItemListContainer 
