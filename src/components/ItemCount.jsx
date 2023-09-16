@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "./Button";
+
 
 const ItemCount = () => {
 
@@ -17,8 +19,8 @@ const ItemCount = () => {
             <h2>{numero}</h2>
             <button onClick={sumar}>+</button>
             <button onClick={restar}>-</button>
+            <Button/>
         </div>
-
-    )
+)
 };
 export default ItemCount;

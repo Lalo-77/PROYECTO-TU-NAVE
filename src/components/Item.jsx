@@ -2,7 +2,7 @@ import '../styles/index.css'
 import {NavLink } from "react-router-dom"
 
 const Item =({productos})=> {
-
+   
     return(
 <>
 {

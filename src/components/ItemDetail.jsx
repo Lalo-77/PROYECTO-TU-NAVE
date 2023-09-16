@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
-import { Item } from "./Item"
-import {ItemCount} from "./ItemCount"
-import productos from "../data/productos.json"
+import {ItemCount} from "./ItemCount";
+import productos from "../data/productos.json";
+import Button from "./Button";
 
 const ItemDetail = ({productos})=> {
     
@@ -18,6 +18,7 @@ const ItemDetail = ({productos})=> {
                 <p>productos.descripcion</p>
                 <p>${productos.price}</p>
                 <p>{productos.stock}</p>
+                <Button/>
                 </section>)}
                 
             </div>
