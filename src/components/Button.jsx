@@ -1,22 +1,10 @@
-import React from 'react';
-import {useState} from 'react'
-import './App.css'
-const Texto = ({text}) => {// props
+import React from 'react'
+import '../styles/index.css'
 
-return (
-        <div> 
-            {text} 
-        </div>
-)
-};
-
-const Button =({Button}) =>{//function
-
+export const Button =({onclick, text}) => {//function
     return (
-    <button onClick={Button}>
-        Sumar contador
-    </button>
+        <button onClick={onclick}>
+            <p>{text}</p>
+        </button>
     );
-} // en el onclick ejcutamos la function 
-{
-    
+}

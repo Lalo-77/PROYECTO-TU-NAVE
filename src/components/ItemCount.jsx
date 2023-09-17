@@ -1,6 +1,6 @@
+import '../styles/index.css'
 import { useState } from "react";
-import Button from "./Button";
-
+import{ Button }from "./Button";
 
 const ItemCount = () => {
 
@@ -19,7 +19,7 @@ const ItemCount = () => {
             <h2>{numero}</h2>
             <button onClick={sumar}>+</button>
             <button onClick={restar}>-</button>
-            <Button/>
+            <Button text={'COMPRAR'} onclick={()=>console.log(numero)}/>
         </div>
 )
 };
