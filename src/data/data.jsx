@@ -1,21 +1,11 @@
-const lista =[
-    {id:'01', title:titulo, stock:30, price:5000, descripction:'lorem', img:'./imagen'},
-
-]
-
-
+import productos from './productos.json'
 
 export const getProductos = () => {
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
 
-        const {categoryName } = useParams()
         setTimeout(() => {
-            if(!categoryId){
-                    reject('No hay productos de esa categoria')
-            }else {
-                resolve(productosJSON.filter(productos => productos.category === categoryTitle))
-            }
+                resolve(productos)
         },2000)
     })
 }
@@ -24,7 +14,7 @@ export const getItem =(id) =>{
 
     return new Promise((resolve)=>{
         setTimeout(()=>{
-                resolve(lista.find((item)=>item.id === id))
+                resolve(productos.find((item)=>item.id === id))
         },2000)
-    }
+    })
 }

@@ -1,6 +1,4 @@
-import {ItemCount} from "./ItemCount";
-import producto from "../data/productos.json";
-
+import ItemCount from "./ItemCount";
 
 const ItemDetail = ({producto})=> {
     const onAdd =(cantidad) => {
@@ -9,13 +7,12 @@ const ItemDetail = ({producto})=> {
     
     return(
         <div className='detail'>
-            
-            <h3> Detalle de:{producto.title} </h3>
+            <h3 className="nombre"> Detalle de:{producto.title}</h3>
                 <img className='card-img' src={producto.image} alt='producto.title'/>
-                <p>{producto.description}</p>
-                <p>${producto.price}</p>
-                <p>{producto.stock}</p>
-                <ItemCount initial={1} stock={producto.stock} onAdd={onAdd}/>
+                <p className="descripcion">{producto.description}</p>
+                <p className="precio">${producto.price}</p>
+                <p className="stock">{producto.stock}</p>
+                <ItemCount  initial={1} stock={producto.stock} onAdd={onAdd}/>
         </div>
     )
 }

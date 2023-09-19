@@ -10,7 +10,7 @@ function App() {
     <NavBar/>
     <Routes>
     <Route exact path='/' element={<ItemListContainer greetings="Bienvenidos a Tienda Tu Maquina!"/>}/>
-    <Route exact path='/category/:categoryId' element={<ItemListContainer greetings="Bienvenidos a los productos de Tu Maquina"/>}/>/>}/>
+    <Route exact path='/category/:categoryId' element={<ItemListContainer greetings="Bienvenidos a los productos de Tu Maquina"/>}/>
     <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>
     </Routes>
     <footer/>

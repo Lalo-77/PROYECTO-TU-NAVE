@@ -14,15 +14,14 @@ const ItemCount = ({stock, onAdd, initial}) => {
         setNumero(numero - 1)
         }
     }
-
     return (
-        <div >
-            <div>
-                <Button onClick={restar}>-</Button>
+        <div className='btn-selec'>
+            <div className='subyba'>
+                <Button  className="menos" onClick={restar} text="-"/>
                 <h2>{numero}</h2>
-                <Button onClick={sumar}>+</Button>
+                <Button  className='mas' onClick={sumar} text="+"/>
             </div>
-            <Button text={'comprar'} disabled={numero === 0} onclick={()=>onAdd(numero)}>Comprar</Button>
+            <Button className="comprar" text={'comprar'} disabled={numero === 0} onclick={()=>onAdd(numero)}/>
         </div>
     )
 };

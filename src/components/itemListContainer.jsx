@@ -10,13 +10,14 @@ const ItemListContainer =({greeting})=>{
     
     useEffect(() => {
         setLoading(true)
-        getProductos(productos)
+        getProductos()
         .then((data) => {
             if(categoryId){
-                setProductos(productos.filter((item)=>item.category === categoryId))
+                setProductos(data.filter((item)=>item.category === categoryId))
             }else{
-                setProductos(productos)
+                setProductos(data)
             }
+        })
         .catch((error) => console.error(error))
         .finally(()=>setLoading(false))
     },[categoryId])
