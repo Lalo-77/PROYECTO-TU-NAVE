@@ -1,20 +1,28 @@
 import {useEffect,useState} from "react"
+import ItemCount from "./ItemCount"
 import ItemDetail from "./ItemDetail";
+import {getItem} from '../data/data'
+import { useParams } from "react-router-dom";
 
-export default function ItemDetailContainer () {
+const ItemDetailContainer = ()=> {
 
-    const [productos, setProductos] = useState ();
+    const [producto, setProducto] = useState ({});
+    
+    const {id}=useParams()
 
     useEffect(() => {
-        fetch()
-        .then((res) => res.json())
-        .then((data) => setProductos(data));
+        getItem(id)
+        .then((producto) => setProducto(producto.json))
+        .catch((error) => setProducto(error));
     }, []);
 
-    if (!productos) return null;
+    if (!producto) return null;
+
     return (
         <div>
-            <ItemDetail productos={productos}/>
+            <ItemDetail producto={producto}/>
+            <ItemCount/>
         </div>
     );
-    }
+}
+export default ItemDetailContainer 

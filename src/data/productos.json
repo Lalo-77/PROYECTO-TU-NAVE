@@ -1,5 +1,5 @@
 
-[
+const lista = [ 
     {
     "id":1,
     "title": "Kit accesorios Lady",

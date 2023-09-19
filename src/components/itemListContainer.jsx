@@ -1,39 +1,35 @@
 import {useEffect,useState} from "react"
-import productosJSON from "../data/productos.json"
-import ItemList  from "./ItemList/ItemList"
+import ItemList  from "./ItemList"
 import { useParams } from "react-router-dom"
+import {getProductos} from "../data/data"
 
-const ItemListContainer =({greetings})=>{
-    
+const ItemListContainer =({greeting})=>{
     const [productos, setProductos] =useState([])
-    const {categoryName } = useParams()
-
-    const getProductos = (categoryName) => {
-        return new Promise((resolve, reject) => {
-        setTimeout(() => {
-        // si no hay categoría, trae a todos los productos
-        if(!categoryName){
-        resolve(productosJSON);
-        }else{
-        // si hay, trae solo a esos productos
-        resolve(productosJSON.filter(el => el.category === categoryName))
-        }
-        }, 2000);
-        });
-        };
-        
-        useEffect(() => {
-        
-        getProductos(categoryName)
-        .then((data) => setProductos(data))
-        .catch((error) => console.error(error));
-        }, [categoryName]);
-        
-        return (
-            <div className="item-list-container">
-                <h1 className="titulo">{greetings}</h1>
-                <ItemList productos={productos}/>
+    const [loading, setLoading]= useState(false)
+    const {categoryId}= useParams ()
+    
+    useEffect(() => {
+        setLoading(true)
+        getProductos(productos)
+        .then((data) => {
+            if(categoryId){
+                setProductos(productos.filter((item)=>item.category === categoryId))
+            }else{
+                setProductos(productos)
+            }
+        .catch((error) => console.error(error))
+        .finally(()=>setLoading(false))
+    },[categoryId])
+    
+    return (
+        <div className="item-list-container">
+            {loading? <p>cargando...</p>
+            :<div>
+            <h1 className="titulo">{greeting}<span>{categoryId && categoryId}</span></h1>
+            <ItemList productos={productos}/>
             </div>
-        )
+            }
+        </div> 
+    )
 }
-    export default ItemListContainer 
+    export default ItemListContainer   
