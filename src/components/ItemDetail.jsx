@@ -7,11 +7,11 @@ const ItemDetail = ({producto})=> {
     
     return(
         <div className='detail'>
-            <h3 className="nombre"> Detalle de:{producto.title}</h3>
+            <h3 className="nombre"> Detalle: {producto.title}</h3>
                 <img className='card-img' src={producto.image} alt='producto.title'/>
                 <p className="descripcion">{producto.description}</p>
                 <p className="precio">${producto.price}</p>
-                <p className="stock">{producto.stock}</p>
+                <p className="stock">Stock: {producto.stock}</p>
                 <ItemCount  initial={1} stock={producto.stock} onAdd={onAdd}/>
         </div>
     )

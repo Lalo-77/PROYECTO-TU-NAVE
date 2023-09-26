@@ -1,27 +1,29 @@
-import '../styles/index.css'
-import { useState } from "react";
-import{ Button } from "./Button";
+import { useState } from 'react';
+import{ Button } from './Button';
+import '../styles/ItemCount.css';
 
-const ItemCount = ({stock, onAdd, initial}) => {
-    const [numero, setNumero]= useState(initial);  
-        const sumar = () =>{
+const ItemCount = ({stock, onAdd, initial }) => {
+    const [numero, setNumero]= useState(initial); 
+
+        const sumar = () => {
         if (numero < stock){
         setNumero(numero + 1);
+
         }
     }
         const restar = ()=>{
-        if(numero > 0 ) {
+        if(numero > 0 ){
         setNumero(numero - 1)
         }
     }
     return (
-        <div className='btn-selec'>
+        <div className='counter'>
             <div className='subyba'>
-                <Button  className="menos" onClick={restar} text="-"/>
-                <h2>{numero}</h2>
-                <Button  className='mas' onClick={sumar} text="+"/>
+                <Button onClick={restar} text="-"></Button>
+                <span className='num'>{numero}</span>
+                <Button onClick={sumar} text="+"></Button>
             </div>
-            <Button className="comprar" text={'comprar'} disabled={numero === 0} onclick={()=>onAdd(numero)}/>
+            <Button className="comprar" text={'Agregar  al Carrito'} disabled={numero === 0} onclick={()=>onAdd(numero)}></Button>
         </div>
     )
 };

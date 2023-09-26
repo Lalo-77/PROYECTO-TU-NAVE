@@ -1,0 +1,17 @@
+.item-list-container{
+display: grid;
+
+}
+.items{
+    display: flex;
+    flex-direction: column;
+    background-color:cadetblue;
+    border-radius: 40px;
+    margin: auto;
+    text-decoration: none;
+    gap: 30px;
+    width: 400px;
+    height: 600px;
+}
+
+

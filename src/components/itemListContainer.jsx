@@ -20,14 +20,15 @@ const ItemListContainer =({greeting})=>{
         })
         .catch((error) => console.error(error))
         .finally(()=>setLoading(false))
+
     },[categoryId])
     
     return (
         <div className="item-list-container">
             {loading? <p>cargando...</p>
             :<div>
-            <h1 className="titulo">{greeting}<span>{categoryId && categoryId}</span></h1>
-            <ItemList productos={productos}/>
+            <h1 className="titulo">{greeting}<span>{categoryId && categoryId}:   </span> Estos son nuestros Accesorios</h1>
+            <ItemList productos ={productos}/>
             </div>
             }
         </div> 
