@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useContext,useState,} from 'react';
 import{ Button } from './Button';
-import '../styles/ItemCount.css';
+import '../styles/ItemCount.css'
+import '../styles/btn-Finalizar.css'
+import {CartContext} from './CartContext';
 
-const ItemCount = ({stock, onAdd, initial }) => {
-    const [numero, setNumero]= useState(initial); 
+const ItemCount = ({stock, onAdd, initial}) => {
+    const [numero, setNumero]= useState(initial);
+    const {cart, addItem, removeItem } = useContext(CartContext);
+    const [item,setItem]=useState()
 
         const sumar = () => {
         if (numero < stock){
@@ -11,19 +15,23 @@ const ItemCount = ({stock, onAdd, initial }) => {
 
         }
     }
-        const restar = ()=>{
-        if(numero > 0 ){
+        const restar= ()=>{ 
+        if(numero > 0){
         setNumero(numero - 1)
         }
     }
     return (
         <div className='counter'>
             <div className='subyba'>
-                <Button onClick={restar} text="-"></Button>
-                <span className='num'>{numero}</span>
-                <Button onClick={sumar} text="+"></Button>
+                <Button className='btn-men' onclick={restar} text="-"></Button>
+                    <span className='num'>{numero}</span>
+                <Button className='btn-mas' onclick={sumar} text="+"></Button>
             </div>
-            <Button className="comprar" text={'Agregar  al Carrito'} disabled={numero === 0} onclick={()=>onAdd(numero)}></Button>
+
+            <Button onClick={() => setItem({...producto, quantity:numero})} className = "comprar" text={'Agregar  al Carrito'} disabled ={numero === 0} onclick={()=>onAdd(numero)}></Button>
+                <span className='espacio'></span>
+
+            <Button onClick={() => {addItem(item, numero)}} className= "Finalizar Compra" text={'Finalizar Compra'}></Button>
         </div>
     )
 };

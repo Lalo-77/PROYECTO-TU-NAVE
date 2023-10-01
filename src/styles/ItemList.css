@@ -1,11 +1,11 @@
 .item-list-container{
 display: grid;
-
 }
 .items{
     display: flex;
     flex-direction: column;
-    background-color:cadetblue;
+    flex-wrap: wrap;
+    background-color:rgba(84, 191, 195, 0.453);
     border-radius: 40px;
     margin: auto;
     text-decoration: none;
@@ -13,5 +13,9 @@ display: grid;
     width: 400px;
     height: 600px;
 }
-
+.Ver-mas{
+    background-color:lightseagreen ;
+    width: 120px;
+    height: 40px;
+    }
 

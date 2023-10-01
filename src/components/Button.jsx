@@ -1,10 +1,11 @@
 import React from 'react'
-import '../styles/index.css'
+import '../styles/Button.css'
 
 export const Button =({onclick, text}) => {//function
     return (
-        <button className='btn-cont' onClick={onclick}>
+        <Button className='btn-count' onClick={onclick}>
             <p>{text}</p>
-        </button>
+        </Button>
     );
 }
+

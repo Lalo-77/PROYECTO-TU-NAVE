@@ -1,0 +1,54 @@
+.detail{
+    flex-direction:column ;
+    align-items: center;
+    background-color: rgba(0, 255, 255, 0.367);
+    margin-left: 40px;
+    border-radius: 40px;
+    text-align: center;
+    width: 800px;
+    height: 850px;
+}
+.nombre{
+    text-align: center;
+    width: 800px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.card-img{
+    align-content: center;
+    width: 400px;
+    height: 300px;
+}
+.descripcion{
+    text-align: center;
+    width: 700px;
+    height: 140px;
+    font-size: 20px;
+    font-weight: 10px;
+}
+.valor{
+    color: black;
+    padding-left: 20px;
+    font-size: 30px;
+    font-weight: 20px;
+}
+.stock{
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 30px;
+}
+.counter{
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 800px;
+    height: 100px;
+}
+.subyba{
+    align-content: center;
+    flex-direction: row;
+    width: 800px;
+    height: 100px;
+}

@@ -1,6 +1,6 @@
 import"../styles/NavBar.css"
 import CartWidget from './CartWidget.jsx'
-import { Link, NavLink } from "react-router-dom"
+import {Link, NavLink} from "react-router-dom"
 const NavBar = () => {
     return ( 
         <header className='Contenedor'>
