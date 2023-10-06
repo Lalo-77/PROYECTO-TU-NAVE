@@ -1,18 +1,21 @@
-import { useContext,useState,} from 'react';
+import { useState,useContext} from 'react';
 import{ Button } from './Button';
-import '../styles/ItemCount.css'
-import '../styles/btn-Finalizar.css'
-import {CartContext} from './CartContext';
+import '../styles/ItemCount.css';
+import '../styles/btnFinalizar.css'
+import PrincipalButton from '../components/PrincipalButton'
+import '../styles/principalButton.css'
+import '../styles/Button.css'
+import { CartContext } from './CartContext';
 
 const ItemCount = ({stock, onAdd, initial}) => {
     const [numero, setNumero]= useState(initial);
-    const {cart, addItem, removeItem } = useContext(CartContext);
-    const [item,setItem]=useState()
+    const [item,setItem, removeItem]= useState()
+
+    const {addItem}= useContext(CartContext)
 
         const sumar = () => {
         if (numero < stock){
         setNumero(numero + 1);
-
         }
     }
         const restar= ()=>{ 
@@ -23,15 +26,18 @@ const ItemCount = ({stock, onAdd, initial}) => {
     return (
         <div className='counter'>
             <div className='subyba'>
-                <Button className='btn-men' onclick={restar} text="-"></Button>
+                <PrincipalButton texto='-'onClick={restar}/>
                     <span className='num'>{numero}</span>
-                <Button className='btn-mas' onclick={sumar} text="+"></Button>
+                <PrincipalButton texto='+'onClick={sumar}/>
             </div>
-
-            <Button onClick={() => setItem({...producto, quantity:numero})} className = "comprar" text={'Agregar  al Carrito'} disabled ={numero === 0} onclick={()=>onAdd(numero)}></Button>
-                <span className='espacio'></span>
-
+            <Button onClick={() => {setItem({...producto, quantity:numero})}} className = "comprar" text={'Agregar  al Carrito'} disabled ={numero === 0} onclick={()=>onAdd(numero)}></Button>
+            <span className='espacio'></span>
             <Button onClick={() => {addItem(item, numero)}} className= "Finalizar Compra" text={'Finalizar Compra'}></Button>
+
+            <span className='espacio'></span>
+
+            <Button onClick={()=>{removeItem(producto.id)}} className='Borrar Producto' text={'Borrar Producto'}></Button>
+            
         </div>
     )
 };

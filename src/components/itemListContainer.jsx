@@ -1,14 +1,15 @@
 import {useEffect,useState} from "react"
 import ItemList  from "./ItemList"
 import {useParams} from "react-router-dom"
-import {getProductos} from "../data/data"
+import {collection, getDocs, query, where} from "firebase/firestore"
+import {db} from "../../src/complementos/firebase"
 
 const ItemListContainer =({greeting})=>{
     const [productos, setProductos] =useState([])
     const [loading, setLoading]= useState(false)
     const {categoryId} = useParams ()
     
-    useEffect(() => {
+    /*useEffect(() => {
         setLoading(true)
         getProductos()
         .then((data) => {
@@ -20,8 +21,26 @@ const ItemListContainer =({greeting})=>{
         })
         .catch((error) => console.error(error))
         .finally(()=> setLoading(false))
-    },[categoryId])
+    },[categoryId])*/
     
+    useEffect(()=>{
+        setLoading(true)
+        const coleccionProductos = categoryId ? query(collection(db, "accesorios"), where("category","==", categoryId)):collection(db, "productos")
+
+        getDocs(coleccionProductos)
+        .then((res)=> { 
+            const producto = res.docs.map((producto)=>{
+                return{
+                    id:producto.id,
+                    ...producto.data()
+                }
+            })
+            setProductos(producto);
+        })
+        .catch((error)=> console.log(error))
+        .finally(()=> setLoading(false))
+    },[categoryId])
+
     return ( 
         <div className="item-list-container">
             {loading ? <p>Cargando...</p>

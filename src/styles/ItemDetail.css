@@ -52,3 +52,13 @@
     width: 800px;
     height: 100px;
 }
+.VerMas{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 20px;
+}
+.VerMas:hover{
+color: crimson;
+}

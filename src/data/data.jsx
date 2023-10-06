@@ -18,3 +18,4 @@ export const getItem =(id) =>{
         },2000)
     })
 }
+export default 'data.jsx'
