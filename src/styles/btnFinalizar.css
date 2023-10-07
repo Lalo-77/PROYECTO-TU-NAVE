@@ -28,3 +28,36 @@
     font-weight:40px;
     font-family:Arial, Helvetica, sans-serif
 }
+.comprar{
+background-color: goldenrod;
+width: 100px;
+height: 50px;
+border-radius: 20px;
+}
+.comprar:hover{
+background-color:crimson;
+width: 100px;
+height: 50px;
+}
+.Finalizar-Compra{
+background-color: goldenrod;
+width: 100px;
+height: 50px;
+border-radius: 20px;
+}
+.Finalizar-Compra:hover{
+background-color:crimson;
+width: 100px;
+height: 50px;
+}
+.Borrar-Producto{
+background-color: goldenrod;
+width: 100px;
+height: 50px;
+border-radius: 20px;
+}
+.Borrar Producto:hover{
+background-color:crimson;
+width: 100px;
+height: 50px;
+}

@@ -1,11 +1,10 @@
-import { CartContext } from './CartContext';
-import '../styles/Button.css'
 
-export const Button =({onclick, text}) => {//function
+import '../styles/button.css'
+
+export const button =({onclick, text}) => {//function
     return (
         <button className='btn-count' onClick={onclick}>
             <p className='text'>{text}</p>
         </button>
     );
 }
-
