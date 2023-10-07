@@ -9,7 +9,7 @@ const ItemDetail = ({producto})=> {
     
     const onAdd =(cantidad) => {
         addItem(producto,cantidad)
-        //console.log(`Compraste ${cantidad} productos`);
+        console.log(`Compraste ${cantidad} productos`);
     }
 
     return(
