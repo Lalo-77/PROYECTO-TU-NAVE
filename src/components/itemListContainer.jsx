@@ -5,6 +5,7 @@ import {collection, getDocs, query, where} from "firebase/firestore"
 import {db} from "../../src/complementos/firebase"
 
 const ItemListContainer =({greeting})=>{
+
     const [productos, setProductos] =useState([])
     const [loading, setLoading]= useState(false)
     const {categoryId} = useParams ()
@@ -45,7 +46,7 @@ const ItemListContainer =({greeting})=>{
         <div className="item-list-container">
             {loading ? <p>Cargando...</p>
             : <div>
-                <h1 className="titulo">{greeting} <span>{categoryId && categoryId}</span> </h1>
+                <h1 className="titulo">{greeting}<span>{categoryId && categoryId}</span> </h1>
                 <ItemList productos ={productos}/>
             </div>
             }

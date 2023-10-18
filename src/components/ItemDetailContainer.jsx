@@ -1,6 +1,5 @@
 import {useEffect,useState} from "react"
 import ItemDetail from "./ItemDetail";
-import {getItem} from '../data/data'
 import { useParams } from "react-router-dom";
 import {collection, doc, getDoc} from 'firebase/firestore';
 import {db} from '../complementos/firebase'
@@ -34,7 +33,7 @@ const ItemDetailContainer = ()=> {
     return (
         <div>
             {loading ? <p>Cargando...</p> : <ItemDetail producto={producto}/>
-    }</div>
+        }</div>
     );
 }
 export default ItemDetailContainer 

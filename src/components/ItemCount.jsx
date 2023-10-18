@@ -1,17 +1,15 @@
 import { useState,useContext} from 'react';
-import {button} from './button';
+import './button';
 import '../styles/ItemCount.css';
 import '../styles/btnFinalizar.css'
 import PrincipalButton from '../components/PrincipalButton'
 import '../styles/principalButton.css'
-import '../styles/button.css'
-import { CartContext } from './CartContext';
+import { CartContext } from '../context/CartContext';
 
 const ItemCount = ({stock, onAdd, initial}) => {
     const [numero, setNumero]= useState(initial);
     const [item,setItem]= useState()
-
-    const {cart,addItem, removeItem}= useContext(CartContext)
+    const {addItem, removeItem}= useContext(CartContext)
 
         const sumar = () => {
         if (numero < stock){
@@ -30,11 +28,11 @@ const ItemCount = ({stock, onAdd, initial}) => {
                     <span className='num'>{numero}</span>
                 <PrincipalButton texto='+'onClick={sumar}/>
             </div>
-                <button onClick={() => {setItem({...producto, quantity: numero})}} className = "comprar" texto= {'Agregar  al Carrito'} disabled={numero ===0} onclick={()=>onAdd(numero)}>Agregar al Carrito</button>
-                <span className='espacio'></span>
+                <button  onClick={() => {setItem({...producto, quantity: numero})}} className = "comprar" disabled={numero === 0} onclick={()=>onAdd(numero)}>Agregar al Carrito</button>
+                    <span className='espacio'></span>
                 <button onclick={() => {addItem(item, numero)}} className = 'Finalizar-Compra' text = {'Finalizar Compra'}>Finalizar Compra</button>
-                <span className='espacio'></span>
-                <button onClick={() => {removeItem(producto.id)}} className = 'Borrar-Producto' text = {'Borrar Producto'}> Borrar Producto </button>
+                    <span className='espacio'></span>
+                <button  onClick={() => {removeItem(producto)}} className = 'Borrar-Producto' text = {'Borrar Producto'}> Borrar Producto </button>
         </div>
     )
 };
