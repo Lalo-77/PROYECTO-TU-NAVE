@@ -1,10 +1,14 @@
 
 import '../styles/button.css'
 
-export const button =({onclick, text}) => {//function
-    return (
-        <button className='btn-count' onClick={onclick}>
-            <p className='text'>{text}</p>
-        </button>
-    );
+export const Button =({callback, text}) =>{
+    return(
+    <button className="comprar" id={id} onClick={(() => (onClick(callback)))}>{text}</button>
+    )
 }
+
+
+
+
+
+

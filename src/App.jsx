@@ -27,6 +27,6 @@ function App() {
         <footer/>
       </BrowserRouter> 
       </CartProvider>
-  );
+  ); 
 }
 export default App 
