@@ -14,23 +14,11 @@ const ItemDetail = ({producto})=> {
     const [numero, setNumero]= useState(initial);
     const [cantidad, setCantidad]= useState();
     const {cart} = useContext(CartContext)
-}
-const onAdd =(cantidad) => {
-    addItem =(producto, cantidad);
-    console.log(`Compraste ${cantidad} productos`);
-}
 
-    const addItem =(cantidad, producto)=>{
-    const itemToCart = {
-        id:obj.id,
-        imgUrl: obj.imag,
-        price:obj.price,
-        detail:Object.title + " " + obj.Marca + " " + obj.Modelo,
-        cantidad: cantidad
-    };
-        cart.addToCart(itemToCart);
-        cart.setCantidad(cantidad)
-    }
+/*const onAdd =(cantidad) => {
+    addItem =(cantidad, producto);
+    console.log(`Compraste ${cantidad} productos`);
+}*/
 
     const sumar = () => {
         if (numero < stock){
@@ -60,4 +48,5 @@ const onAdd =(cantidad) => {
                 </div>
             </div>
     )
+}
 export default ItemDetail
